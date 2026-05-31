@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Boshuisjes – Forest Cottage Retreats in Wageningen, Netherlands</title>
+  <meta name="description" content="Two cosy forest cottages in Wageningen's oak woods — rated 9.3 Wonderful on Booking.com. Perfect for couples, families, WUR visitors & nature lovers. Pets welcome. Self check-in. Free parking."/>
+  <meta name="keywords" content="Boshuisjes, Boshuisje, Chez Michel, vakantiewoning Wageningen, forest cottage Netherlands, holiday rental Gelderland, Wielerbaan park, Wageningen University accommodation, nature retreat, pet friendly cottage Netherlands"/>
+  <link rel="canonical" href="https://boshuisjes.com/"/>
+  <meta property="og:title" content="Boshuisjes – Forest Cottage Retreats in Wageningen · 9.3 Wonderful"/>
+  <meta property="og:description" content="Two cosy forest cottages in Wageningen's oak woods. Rated 9.3 Booking.com. Pets welcome. Free parking. Pool access."/>
+  <meta property="og:image" content="https://le-de.cdn-website.com/e07e37bfc5774cbc9c3e93ad9b976e5b/dms3rep/multi/opt/IMG_20210513_085403-1920w.jpg"/>
+  <meta property="og:type" content="website"/>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Boshuisjes","description":"Two cosy forest cottages in the oak woods of Wageningen, Netherlands. Rated 9.3 on Booking.com.","url":"https://boshuisjes.com","telephone":"+31649443739","address":{"@type":"PostalAddress","streetAddress":"Zoomweg 7 A06","addressLocality":"Wageningen","addressRegion":"Gelderland","addressCountry":"NL"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"9.3","bestRating":"10","ratingCount":"50"},"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Free Parking","value":true},{"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true},{"@type":"LocationFeatureSpecification","name":"Pet Friendly","value":true},{"@type":"LocationFeatureSpecification","name":"Seasonal Pool","value":true},{"@type":"LocationFeatureSpecification","name":"Self Check-In","value":true}],"checkinTime":"16:00","checkoutTime":"10:00"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* ── HERO ── */
+    #hero{position:relative;height:100vh;min-height:680px;display:flex;align-items:flex-end;padding-bottom:7rem;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,20,10,.15) 0%,rgba(10,20,10,.08) 45%,rgba(10,20,10,.72) 100%),url('img_exterior2.jpg') center/cover no-repeat;transform:scale(1.05);animation:hzoom 14s ease-out forwards}
+    .hero-content{position:relative;z-index:2;padding-left:8rem;max-width:820px;opacity:0;transform:translateY(28px);animation:fadeUp 1.2s .4s ease forwards}
+    @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+    .hero-badge{display:inline-flex;align-items:center;gap:.6rem;background:rgba(200,169,110,.15);border:1px solid rgba(200,169,110,.4);padding:.38rem 1rem;margin-bottom:1.4rem}
+    .hero-badge-stars{color:var(--gold);font-size:.78rem;letter-spacing:.08em}
+    .hero-badge-text{color:var(--cream);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase}
+    .hero-eyebrow{display:block;color:var(--gold);font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;margin-bottom:1.1rem}
+    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,7vw,6.2rem);font-weight:300;color:var(--cream);line-height:1.05;margin-bottom:1.4rem}
+    h1 em{font-style:italic;color:var(--gold)}
+    .hero-sub{color:rgba(245,240,232,.82);font-size:1.05rem;font-weight:300;line-height:1.75;max-width:500px;margin-bottom:2.5rem}
+    .hero-ctas{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+    .hero-scroll{position:absolute;bottom:2.5rem;right:4rem;z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;color:rgba(245,240,232,.55);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;animation:fadeUp 1.2s 1.4s ease forwards;opacity:0}
+    .scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(200,169,110,.8),transparent);animation:sPulse 2.2s 2s infinite}
+    @keyframes sPulse{0%,100%{transform:scaleY(1);opacity:.8}50%{transform:scaleY(.55);opacity:.25}}
+
+    /* ── INTRO ── */
+    .intro-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:center}
+    .intro-text p{color:#555;line-height:1.9;font-size:1rem;margin-top:1.6rem}
+    .intro-text p+p{margin-top:.9rem}
+    .intro-text .btn-primary{margin-top:2rem}
+
+    /* ── COTTAGE CARDS ── */
+    .cottage-cards{display:grid;grid-template-columns:1fr 1fr;gap:3px}
+    .cottage-card{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:pointer;background:var(--bark);text-decoration:none;display:block}
+    .cottage-card img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.4,0,.2,1);filter:brightness(.68)}
+    .cottage-card:hover img{transform:scale(1.07);filter:brightness(.48)}
+    .cottage-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,10,.92) 0%,transparent 52%);display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem}
+    .cottage-num{font-family:'Cormorant Garamond',serif;font-size:4.5rem;font-weight:300;color:rgba(200,169,110,.18);position:absolute;top:1.5rem;right:2rem;line-height:1}
+    .cottage-cap{position:absolute;top:1.5rem;left:2rem;background:rgba(200,169,110,.88);color:var(--forest);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;padding:.28rem .75rem;font-weight:500}
+    .cottage-tag-label{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;display:block}
+    .cottage-card h3{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--cream);margin-bottom:.7rem}
+    .cottage-card p{color:rgba(245,240,232,.65);font-size:.88rem;line-height:1.65;margin-bottom:1.2rem}
+    .cottage-card-cta{color:var(--gold);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;transition:gap .3s}
+    .cottage-card:hover .cottage-card-cta{gap:1rem}
+
+    /* ── SCORE BLOCK ── */
+    .score-block{background:var(--forest);display:inline-flex;flex-direction:column;align-items:center;padding:1.5rem 2.2rem;margin-bottom:1.5rem}
+    .score-num{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:300;line-height:1;color:var(--gold)}
+    .score-word{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);margin-top:.25rem}
+    .score-src{font-size:.62rem;opacity:.45;color:var(--cream)}
+
+    @media(max-width:960px){
+      .hero-content{padding-left:1.5rem;padding-right:1.5rem}
+      .hero-scroll{display:none}
+      .intro-wrap,.cottage-cards{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- nav injected by shared.js -->
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-stars">★★★★★</span>
+        <span class="hero-badge-text">Rated 9.3 Wonderful · Booking.com</span>
+      </div>
+      <span class="hero-eyebrow">Wielerbaan Park · Wageningen · Netherlands</span>
+      <h1>Two cottages lost<br><em>in the oak forest</em></h1>
+      <p class="hero-sub">Two privately owned forest cottages where the ancient oaks start at your doorstep and the rest of the world falls quietly away.</p>
+      <div class="hero-ctas">
+        <a href="contact.html" class="btn-primary">Check Availability</a>
+        <a href="boshuisje.html" class="btn-ghost">Meet the Cottages</a>
+      </div>
+    </div>
+    <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item"><strong>9.3</strong>&nbsp;Wonderful · Booking.com</div>
+    <div class="trust-item"><strong>★ 4.9</strong>&nbsp;Airbnb</div>
+    <div class="trust-item"><strong>4 guests</strong>&nbsp;per cottage</div>
+    <div class="trust-item"><strong>Pets</strong>&nbsp;welcome on request</div>
+    <div class="trust-item"><strong>Free</strong>&nbsp;parking</div>
+    <div class="trust-item"><strong>Pool</strong>&nbsp;access (seasonal)</div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="section-pad" style="background:var(--ivory)">
+    <div class="container">
+      <div class="intro-wrap">
+        <div class="intro-text reveal">
+          <span class="section-label">Welcome to Boshuisjes</span>
+          <h2 class="section-title">A forest escape,<br><em>thoughtfully made</em></h2>
+          <p>Nestled in the Wielerbaan Holiday Park on the wooded edge of Wageningen — a vibrant university city in the heart of Gelderland — Boshuisjes is a pair of privately owned forest cottages designed to give you exactly what modern life rarely offers: genuine quiet.</p>
+          <p>Both cottages are warm, well-equipped and tastefully furnished. Step outside and you're surrounded by ancient oak. Linger on the terrace with coffee, follow a trail, or simply do nothing. The forest takes care of the rest.</p>
+          <a href="boshuisje.html" class="btn-primary">Explore the Cottages</a>
+        </div>
+        <div class="grid-2 reveal reveal-delay-1">
+          <div class="stat-card"><span class="stat-number">9.3</span><span class="stat-label">Booking.com Rating</span></div>
+          <div class="stat-card"><span class="stat-number">2</span><span class="stat-label">Forest Cottages</span></div>
+          <div class="stat-card"><span class="stat-number">4</span><span class="stat-label">Guests per Cottage</span></div>
+          <div class="stat-card"><span class="stat-number">20+</span><span class="stat-label">Countries of Guests</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COTTAGE CARDS -->
+  <section class="section-pad section-dark">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;gap:2rem;flex-wrap:wrap" class="reveal">
+        <div>
+          <span class="section-label">Our Accommodations</span>
+          <h2 class="section-title" style="color:var(--cream)">Two cottages.<br><em>One forest.</em></h2>
+        </div>
+        <p style="max-width:380px;color:rgba(245,240,232,.6);line-height:1.8;font-size:.95rem">Both sleep up to 4 guests and can be booked independently or together. Pets welcome on request.</p>
+      </div>
+      <div class="cottage-cards reveal reveal-delay-1">
+        <a href="boshuisje.html" class="cottage-card">
+          <img src="img_exterior1.jpg" alt="Boshuisje – forest cottage Wageningen" loading="lazy"/>
+          <div class="cottage-overlay">
+            <span class="cottage-num">01</span>
+            <span class="cottage-cap">Up to 4 guests</span>
+            <span class="cottage-tag-label">Cottage One · A06</span>
+            <h3>Boshuisje</h3>
+            <p>A cosy retreat for couples or small families, with flexible bed arrangements and a private terrace opening to the forest.</p>
+            <span class="cottage-card-cta">View Cottage &nbsp;→</span>
+          </div>
+        </a>
+        <a href="chez-michel.html" class="cottage-card">
+          <img src="img_living_panoramic.jpg" alt="Boshuisje Chez-Michel – 2-bedroom cottage Wageningen" loading="lazy"/>
+          <div class="cottage-overlay">
+            <span class="cottage-num">02</span>
+            <span class="cottage-cap">Up to 4 guests</span>
+            <span class="cottage-tag-label">Cottage Two · A04</span>
+            <h3>Boshuisje Chez-Michel</h3>
+            <p>Two full bedrooms, lovingly decorated interiors, and a private terrace. Perfect for families wanting space and comfort in the trees.</p>
+            <span class="cottage-card-cta">View Cottage &nbsp;→</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS SNAPSHOT -->
+  <section class="section-pad" style="background:var(--cream)">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:4rem" class="reveal">
+        <div class="score-block">
+          <span class="score-num">9.3</span>
+          <span class="score-word">Wonderful</span>
+          <span class="score-src">Booking.com · 50+ verified reviews</span>
+        </div>
+        <span class="section-label">What guests say</span>
+        <h2 class="section-title">Real words from<br><em>real guests</em></h2>
+      </div>
+      <div class="grid-3">
+        <div class="review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"A really beautiful cottage — it made my stay in the Netherlands so wonderful and cozy."</p>
+          <div class="review-author"><span class="review-flag">🇮🇳</span><div><div class="review-name">Anjali V.</div><div class="review-origin">India · 7-night solo stay</div><div class="review-platform">Booking.com</div></div></div>
+        </div>
+        <div class="review-card reveal reveal-delay-1">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Fantastic in every way — nothing was missing. Extremely clean. The beds were excellent, we slept wonderfully."</p>
+          <div class="review-author"><span class="review-flag">🇳🇱</span><div><div class="review-name">Dutch guest</div><div class="review-origin">Netherlands · Family stay</div><div class="review-platform">Booking.com</div></div></div>
+        </div>
+        <div class="review-card reveal reveal-delay-2">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Your cozy accommodation was the perfect base for our WUR research stay — we felt completely at home."</p>
+          <div class="review-author"><span class="review-flag">🇰🇷</span><div><div class="review-name">Seoyoung Y.</div><div class="review-origin">South Korea · WUR research stay</div><div class="review-platform">Airbnb</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK LINKS -->
+  <section class="section-pad-sm section-dark">
+    <div class="container">
+      <div class="grid-3 reveal">
+        <a href="area.html" class="feature-card" style="background:rgba(255,255,255,.04);border:none;text-decoration:none">
+          <span class="feature-card-icon">🌳</span>
+          <h3 style="color:var(--cream)">The Area</h3>
+          <p style="color:rgba(245,240,232,.55)">Forests, cycling routes, the Rhine, Wageningen city, Belmonte Arboretum and more.</p>
+          <span class="tag" style="color:var(--gold)">Explore →</span>
+        </a>
+        <a href="hosts.html" class="feature-card" style="background:rgba(255,255,255,.04);border:none;text-decoration:none">
+          <span class="feature-card-icon">👋</span>
+          <h3 style="color:var(--cream)">Your Hosts</h3>
+          <p style="color:rgba(245,240,232,.55)">Christopher and Zuzana — always available, never intrusive. Your stay, your way.</p>
+          <span class="tag" style="color:var(--gold)">Meet us →</span>
+        </a>
+        <a href="contact.html" class="feature-card" style="background:rgba(255,255,255,.04);border:none;text-decoration:none">
+          <span class="feature-card-icon">📅</span>
+          <h3 style="color:var(--cream)">Book a Stay</h3>
+          <p style="color:rgba(245,240,232,.55)">Check availability, ask a question, or reserve your cottage directly.</p>
+          <span class="tag" style="color:var(--gold)">Get in touch →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer injected by shared.js -->
+  <script src="shared.js"></script>
+  <script>initPage('index');</script>
+</body>
+</html>

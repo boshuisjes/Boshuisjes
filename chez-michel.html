@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Boshuisje Chez-Michel – 2-Bedroom Forest Cottage, Wageningen</title>
+  <meta name="description" content="Boshuisje Chez-Michel — a lovingly decorated 2-bedroom forest cottage for up to 4 guests in Wageningen. Family-friendly with bunk beds, full kitchen, pool access and free parking."/>
+  <link rel="canonical" href="https://boshuisjes.com/chez-michel"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .gallery-wrap{position:relative;user-select:none}
+    .gallery-main-img{width:100%;height:520px;object-fit:cover;display:block;cursor:pointer;transition:opacity .25s}
+    .gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(30,45,31,.72);color:var(--cream);border:none;cursor:pointer;width:52px;height:52px;font-size:1.4rem;display:flex;align-items:center;justify-content:center;transition:background .25s;z-index:2}
+    .gallery-arrow:hover{background:rgba(200,169,110,.85)}
+    .gallery-arrow.prev{left:1rem}.gallery-arrow.next{right:1rem}
+    .gallery-counter{position:absolute;bottom:1rem;right:1.2rem;background:rgba(10,20,10,.65);color:var(--cream);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:.35rem .85rem}
+    .gallery-thumbs{display:grid;grid-template-columns:repeat(6,1fr);gap:3px;margin-top:3px}
+    .g-thumb{height:90px;overflow:hidden;cursor:pointer;opacity:.6;transition:opacity .25s}
+    .g-thumb:hover,.g-thumb.active{opacity:1}
+    .g-thumb img{width:100%;height:100%;object-fit:cover}
+    .g-thumb-more{height:90px;background:var(--forest);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;gap:.2rem}
+    .g-thumb-more strong{color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;line-height:1}
+    .g-thumb-more span{color:rgba(245,240,232,.55);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase}
+    .lb{display:none;position:fixed;inset:0;background:rgba(5,10,5,.97);z-index:9999;align-items:center;justify-content:center}
+    .lb.open{display:flex}
+    .lb img{max-width:92vw;max-height:90vh;object-fit:contain}
+    .lb-close{position:absolute;top:1.2rem;right:1.8rem;color:rgba(245,240,232,.7);font-size:2.2rem;cursor:pointer;background:none;border:none;line-height:1;transition:color .2s}
+    .lb-close:hover{color:var(--gold)}
+    .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(200,169,110,.15);color:var(--cream);border:1px solid rgba(200,169,110,.25);cursor:pointer;width:56px;height:56px;font-size:1.5rem;display:flex;align-items:center;justify-content:center;transition:background .25s}
+    .lb-nav:hover{background:rgba(200,169,110,.4)}
+    .lb-nav.prev{left:1.5rem}.lb-nav.next{right:1.5rem}
+    .lb-caption{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);color:rgba(245,240,232,.45);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap}
+    .detail-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:start}
+    .booking-box{background:var(--forest);padding:2.5rem;position:sticky;top:7rem}
+    .booking-box h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--cream);margin-bottom:1.8rem;font-weight:300}
+    .book-row{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:.85rem}
+    .book-row:last-of-type{border-bottom:none}
+    .book-row span{color:rgba(245,240,232,.55)}.book-row strong{color:var(--gold);font-weight:400}
+    .spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--mist);margin-top:2rem}
+    .spec-item{background:var(--ivory);padding:1.1rem 1.3rem}
+    .spec-label{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:#aaa;margin-bottom:.3rem;display:block}
+    .spec-value{font-size:.9rem;color:var(--charcoal)}
+    .amenity-list{list-style:none;padding:0;margin-top:1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+    .amenity-list li{font-size:.85rem;color:#555;display:flex;gap:.5rem;align-items:baseline}
+    .amenity-list li::before{content:'✓';color:var(--gold);font-size:.7rem;flex-shrink:0}
+    .room-card{background:var(--ivory);padding:2rem;border-left:3px solid var(--gold);margin-bottom:2px}
+    .room-card h4{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--forest);margin-bottom:.5rem}
+    .room-card p{font-size:.88rem;color:#666;line-height:1.75}
+    .room-photo-pair{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:.8rem}
+    .room-photo-pair img{width:100%;height:150px;object-fit:cover;cursor:pointer;transition:filter .25s}
+    .room-photo-pair img:hover{filter:brightness(1.08)}
+    .room-photo-single img{width:100%;height:200px;object-fit:cover;cursor:pointer;margin-top:.8rem;transition:filter .25s}
+    .room-photo-single img:hover{filter:brightness(1.08)}
+    @media(max-width:960px){.detail-layout{grid-template-columns:1fr}.booking-box{position:static}.gallery-thumbs{grid-template-columns:repeat(4,1fr)}.amenity-list{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="gallery-wrap" id="gallery">
+    <img class="gallery-main-img" id="gMain" src="cm_living2.jpg" alt="Chez-Michel – living room" onclick="openLB(currentIdx)"/>
+    <button class="gallery-arrow prev" onclick="gNav(-1)">&#8592;</button>
+    <button class="gallery-arrow next" onclick="gNav(1)">&#8594;</button>
+    <div class="gallery-counter"><span id="gCount">1 / 17</span></div>
+    <div class="gallery-thumbs" id="gThumbs"></div>
+  </div>
+
+  <div class="lb" id="lb">
+    <button class="lb-close" onclick="closeLB()">&#215;</button>
+    <button class="lb-nav prev" onclick="lbNav(-1)">&#8592;</button>
+    <img id="lbImg" src="" alt=""/>
+    <button class="lb-nav next" onclick="lbNav(1)">&#8594;</button>
+    <span class="lb-caption" id="lbCap"></span>
+  </div>
+
+  <div class="trust-bar">
+    <div class="trust-item">⭐ <strong>9.3</strong>&nbsp;Wonderful · Booking.com</div>
+    <div class="trust-item">🛏️ <strong>2 bedrooms</strong>&nbsp;· up to 4 guests</div>
+    <div class="trust-item">🐾 <strong>Pets welcome</strong>&nbsp;on request</div>
+    <div class="trust-item">🌳 <strong>Forest setting</strong>&nbsp;Wageningen</div>
+    <div class="trust-item">🏊 <strong>Pool access</strong>&nbsp;seasonal</div>
+  </div>
+
+  <section class="section-pad" style="background:var(--ivory)">
+    <div class="container">
+      <div class="detail-layout">
+        <div class="reveal">
+          <span class="section-label">Boshuisje A04 · Wielerbaan Park · Wageningen</span>
+          <h1 class="section-title">Boshuisje<br><em>Chez-Michel</em></h1>
+          <p style="color:#555;line-height:1.9;margin-top:1.4rem;font-size:1rem">A character-filled forest cottage for up to four guests — Chez-Michel is the more spacious of our two cottages, with two proper bedrooms, a generous open-plan living and dining area, and panoramic bay windows that look directly onto the garden and the surrounding oak trees. Decorated with care over many years, our guests consistently call it the most relaxing place they've ever stayed.</p>
+          <p style="color:#555;line-height:1.9;margin-top:1rem;font-size:1rem">The large bay windows flood the cottage with natural light whatever the season. Patio doors in the living room open directly onto the private garden terrace — perfect for morning coffee under the trees, or a long summer evening with a glass of wine.</p>
+
+          <div class="spec-grid" style="margin-top:2.5rem">
+            <div class="spec-item"><span class="spec-label">Guests</span><span class="spec-value">Up to 4</span></div>
+            <div class="spec-item"><span class="spec-label">Bedrooms</span><span class="spec-value">2</span></div>
+            <div class="spec-item"><span class="spec-label">Bathroom</span><span class="spec-value">1 · shower, WC, sink</span></div>
+            <div class="spec-item"><span class="spec-label">Kitchen</span><span class="spec-value">Full · gas hob, microwave</span></div>
+            <div class="spec-item"><span class="spec-label">Coffee</span><span class="spec-value">Senseo machine</span></div>
+            <div class="spec-item"><span class="spec-label">Wi-Fi</span><span class="spec-value">Yes · T-Mobile</span></div>
+            <div class="spec-item"><span class="spec-label">TV</span><span class="spec-value">Cable flat screen</span></div>
+            <div class="spec-item"><span class="spec-label">Parking</span><span class="spec-value">Free · private</span></div>
+            <div class="spec-item"><span class="spec-label">Check-in</span><span class="spec-value">From 16:00 (self)</span></div>
+            <div class="spec-item"><span class="spec-label">Check-out</span><span class="spec-value">By 10:00</span></div>
+            <div class="spec-item"><span class="spec-label">Pets</span><span class="spec-value">On request · surcharge</span></div>
+            <div class="spec-item"><span class="spec-label">Smoking</span><span class="spec-value">Outdoors only</span></div>
+          </div>
+
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--forest);margin-top:3rem;margin-bottom:1.2rem">The rooms</h2>
+
+          <div class="room-card">
+            <h4>Master bedroom — double/twin</h4>
+            <p>A double bed with built-in overhead storage and warm reading lights. Forest views from the window. Linens and towels included (extras €25/set).</p>
+            <div class="room-photo-single"><img src="cm_bedroom1.jpg" alt="Master bedroom" onclick="openLBByFile('cm_bedroom1.jpg')"/></div>
+          </div>
+
+          <div class="room-card" style="margin-top:2px">
+            <h4>Second bedroom — bunks + workspace</h4>
+            <p>A cheerful yellow bunk room sleeping two, with a full-width built-in desk, ergonomic chair and overhead storage. Perfect for children, or equally for a researcher or remote worker who needs a proper workspace away from the living area.</p>
+            <div class="room-photo-pair">
+              <img src="cm_bedroom2_bunks2.jpg" alt="Bunk beds" onclick="openLBByFile('cm_bedroom2_bunks2.jpg')"/>
+              <img src="cm_bedroom2_desk.jpg" alt="Workspace" onclick="openLBByFile('cm_bedroom2_desk.jpg')"/>
+            </div>
+          </div>
+
+          <div class="room-card" style="margin-top:2px">
+            <h4>Living & dining room</h4>
+            <p>Airy open-plan space with leather sofas, dining table for four, flat-screen TV, and the striking red-umbrella painting guests always remark on. Bay windows wrap the front of the cottage. Patio doors open to the terrace.</p>
+            <div class="room-photo-pair">
+              <img src="cm_living2.jpg" alt="Living room" onclick="openLBByFile('cm_living2.jpg')"/>
+              <img src="cm_dining_painting.jpg" alt="Dining with painting" onclick="openLBByFile('cm_dining_painting.jpg')"/>
+            </div>
+          </div>
+
+          <div class="room-card" style="margin-top:2px">
+            <h4>Kitchen</h4>
+            <p>Full dark-cabinet kitchen with gas hob, microwave, full-size fridge, Senseo coffee maker, and the beautiful oak china cabinet fully stocked with crockery and glasses. The forest window makes everything feel less like a chore.</p>
+            <div class="room-photo-pair">
+              <img src="cm_kitchen2.jpg" alt="Kitchen" onclick="openLBByFile('cm_kitchen2.jpg')"/>
+              <img src="cm_cabinet_kitchen.jpg" alt="China cabinet" onclick="openLBByFile('cm_cabinet_kitchen.jpg')"/>
+            </div>
+          </div>
+
+          <div class="room-card" style="margin-top:2px">
+            <h4>Bathroom</h4>
+            <p>Complete bathroom with walk-in shower, heated towel rail, WC and sink. Fresh towels included.</p>
+            <div class="room-photo-single"><img src="cm_bathroom.jpg" alt="Bathroom" onclick="openLBByFile('cm_bathroom.jpg')"/></div>
+          </div>
+
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--forest);margin-top:3rem;margin-bottom:.5rem">What's included</h2>
+          <ul class="amenity-list">
+            <li>Bed linens &amp; towels (1 set/guest)</li>
+            <li>Wi-Fi · T-Mobile</li>
+            <li>Cable TV (flat screen)</li>
+            <li>Gas hob + microwave + fridge</li>
+            <li>Senseo coffee machine</li>
+            <li>Full crockery &amp; glasses</li>
+            <li>Pots, pans &amp; utensils</li>
+            <li>Seasonal swimming pool pass</li>
+            <li>Soap &amp; cleaning supplies</li>
+            <li>Free private parking</li>
+            <li>Park keycard for gate access</li>
+            <li>Self check-in lockbox</li>
+            <li>Private garden terrace</li>
+            <li>Access to park launderette</li>
+          </ul>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <div class="booking-box">
+            <h3>Book Chez-Michel</h3>
+            <div class="book-row"><span>Booking.com</span><strong>9.3 Wonderful</strong></div>
+            <div class="book-row"><span>Airbnb</span><strong>★ 4.9</strong></div>
+            <div class="book-row"><span>Max guests</span><strong>4</strong></div>
+            <div class="book-row"><span>Bedrooms</span><strong>2</strong></div>
+            <div class="book-row"><span>Check-in</span><strong>From 16:00</strong></div>
+            <div class="book-row"><span>Check-out</span><strong>By 10:00</strong></div>
+            <div class="book-row"><span>Pets</span><strong>Welcome · ask us</strong></div>
+            <div style="margin-top:2rem;display:flex;flex-direction:column;gap:.8rem">
+              <a href="https://www.booking.com/hotel/nl/boshuisje-chez-michelle.html" target="_blank" rel="noopener" class="btn-primary" style="text-align:center;display:block">Check Availability</a>
+              <a href="https://www.airbnb.com/rooms/49576917" target="_blank" rel="noopener" class="btn-ghost" style="text-align:center;display:block">View on Airbnb</a>
+              <a href="tel:+31649443739" class="btn-ghost" style="text-align:center;display:block;color:var(--gold);border-color:rgba(200,169,110,.4)">📞 +31 06 4944 3739</a>
+            </div>
+            <p style="font-size:.72rem;color:rgba(245,240,232,.4);text-align:center;margin-top:1.2rem;line-height:1.7">Also available: <a href="boshuisje.html" style="color:rgba(200,169,110,.6)">Boshuisje (A06)</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad-sm" style="background:var(--forest)">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3rem" class="reveal">
+        <span class="section-label" style="color:rgba(200,169,110,.7)">What guests say</span>
+        <div style="font-size:1.1rem;color:var(--gold);margin-top:.5rem">★★★★★</div>
+      </div>
+      <div class="grid-3-col">
+        <div class="review-card reveal"><p class="review-text">"Liebevoll dekoriert — schöne Aussicht, super ruhige Lage im Wald. Absolut empfehlenswert!"</p><div class="review-author">German guest · Booking.com</div></div>
+        <div class="review-card reveal reveal-delay-1"><p class="review-text">"De accommodatie was in alles fantastisch! Er ontbrak werkelijk niets en was uitermate schoon en netjes."</p><div class="review-author">Nederlandse gast · Booking.com</div></div>
+        <div class="review-card reveal reveal-delay-2"><p class="review-text">"Thank you for making my stay so wonderful and cosy. It is a really beautiful cottage."</p><div class="review-author">Anjali V. · India · Booking.com</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad-sm" style="background:var(--cream);text-align:center">
+    <div class="container reveal">
+      <span class="section-label">Also available</span>
+      <h2 class="section-title" style="margin-bottom:1.2rem">Looking for something<br><em>more intimate?</em></h2>
+      <p style="color:#666;max-width:520px;margin:0 auto 2rem;line-height:1.8">Boshuisje (A06) is our cosier single-bedroom cottage — perfect for couples or solo guests, just a few plots away in the same forest.</p>
+      <a href="boshuisje.html" class="btn-forest">See Boshuisje →</a>
+    </div>
+  </section>
+
+  <script src="shared.js"></script>
+  <script>
+  initPage('chez-michel');
+  const photos=[
+    {src:'cm_living2.jpg',cap:'Living room – panoramic bay windows'},
+    {src:'cm_living1.jpg',cap:'Living room – leather sofa & TV'},
+    {src:'cm_living_terrace.jpg',cap:'Living room opening to terrace'},
+    {src:'cm_dining_painting.jpg',cap:'Dining area with red-umbrella painting'},
+    {src:'cm_dining_flowers.jpg',cap:'Dining table – always flowers'},
+    {src:'cm_dining2.jpg',cap:'Dining overview'},
+    {src:'cm_open_plan.jpg',cap:'Open plan – living & dining'},
+    {src:'cm_wide_overview.jpg',cap:'Wide overview – lounge, dining & kitchen'},
+    {src:'cm_wide_kitchen.jpg',cap:'Kitchen – full view'},
+    {src:'cm_cabinet_kitchen.jpg',cap:'Oak china cabinet & kitchen'},
+    {src:'cm_kitchen2.jpg',cap:'Kitchen – gas hob & forest window'},
+    {src:'cm_kitchen_autumn.jpg',cap:'Kitchen – autumn forest view'},
+    {src:'cm_bedroom1.jpg',cap:'Master bedroom – reading lights & built-in storage'},
+    {src:'cm_bedroom2_bunks2.jpg',cap:'Second bedroom – bunk beds'},
+    {src:'cm_bedroom2_bunks.jpg',cap:'Second bedroom – bunk beds detail'},
+    {src:'cm_bedroom2_desk.jpg',cap:'Second bedroom – workspace'},
+    {src:'cm_bathroom.jpg',cap:'Bathroom – shower, WC & heated towel rail'},
+  ];
+  let currentIdx=0,lbIdx=0;
+  function buildThumbs(){
+    const w=document.getElementById('gThumbs');w.innerHTML='';
+    photos.slice(0,5).forEach((p,i)=>{
+      const d=document.createElement('div');
+      d.className='g-thumb'+(i===0?' active':'');
+      d.onclick=()=>setPhoto(i);
+      d.innerHTML=`<img src="${p.src}" alt="${p.cap}" loading="lazy"/>`;
+      w.appendChild(d);
+    });
+    const m=document.createElement('div');m.className='g-thumb-more';
+    m.onclick=()=>openLB(0);
+    m.innerHTML=`<strong>+${photos.length-5}</strong><span>all photos</span>`;
+    w.appendChild(m);
+  }
+  function setPhoto(idx){
+    currentIdx=(idx+photos.length)%photos.length;
+    const m=document.getElementById('gMain');
+    m.style.opacity=0;
+    setTimeout(()=>{m.src=photos[currentIdx].src;m.alt=photos[currentIdx].cap;m.style.opacity=1;},120);
+    document.getElementById('gCount').textContent=`${currentIdx+1} / ${photos.length}`;
+    document.querySelectorAll('.g-thumb').forEach((el,i)=>el.classList.toggle('active',i===currentIdx));
+  }
+  function gNav(dir){setPhoto(currentIdx+dir);}
+  function openLB(idx){
+    lbIdx=(idx+photos.length)%photos.length;
+    document.getElementById('lbImg').src=photos[lbIdx].src;
+    document.getElementById('lbCap').textContent=`${lbIdx+1} / ${photos.length} — ${photos[lbIdx].cap}`;
+    document.getElementById('lb').classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function openLBByFile(f){const i=photos.findIndex(p=>p.src===f);if(i>=0)openLB(i);}
+  function closeLB(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+  function lbNav(dir){
+    lbIdx=(lbIdx+dir+photos.length)%photos.length;
+    const img=document.getElementById('lbImg');img.style.opacity=0;
+    setTimeout(()=>{img.src=photos[lbIdx].src;document.getElementById('lbCap').textContent=`${lbIdx+1} / ${photos.length} — ${photos[lbIdx].cap}`;img.style.opacity=1;},120);
+  }
+  document.getElementById('lb').addEventListener('click',function(e){if(e.target===this)closeLB();});
+  document.addEventListener('keydown',e=>{
+    if(!document.getElementById('lb').classList.contains('open'))return;
+    if(e.key==='ArrowRight')lbNav(1);
+    if(e.key==='ArrowLeft')lbNav(-1);
+    if(e.key==='Escape')closeLB();
+  });
+  buildThumbs();
+  </script>
+</body>
+</html>
