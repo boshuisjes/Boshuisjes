@@ -10,23 +10,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
-    :root{--forest:#1e2d1f;--gold:#c8a96e;--cream:#f5f0e8;--moss:#3a5c3e}
+    :root{--forest:#1e2d1f;--forest-deep:#141f15;--gold:#c8a96e;--cream:#f5f0e8}
     html,body{height:100%}
     body{
       font-family:'Jost',sans-serif;
       font-weight:300;
-      background:var(--forest);
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(58,92,62,.35), transparent 60%),
+        linear-gradient(180deg, var(--forest) 0%, var(--forest-deep) 100%);
       color:var(--cream);
       min-height:100vh;
       display:flex;
       align-items:center;
       justify-content:center;
       padding:2rem;
-      background-image:
-        linear-gradient(rgba(10,20,10,.72),rgba(10,20,10,.72)),
-        url('photos/a06/Boshuije%2006%20Banner%20photo.jpg');
-      background-size:cover;
-      background-position:center;
     }
     .wrap{text-align:center;max-width:580px}
     .eyebrow{
