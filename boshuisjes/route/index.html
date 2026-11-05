@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>De route naar Boshuisje · Boshuisjes Wageningen</title>
+  <meta name="description" content="Loop mee van de ingang van Recreatiepark de Wielerbaan naar Boshuisje A06 in Wageningen. Walk with us from the park entrance to the cottage."/>
+  <meta property="og:title" content="De route naar Boshuisje — Boshuisjes Wageningen"/>
+  <meta property="og:description" content="Van de parkingang naar het huisje in het bos · From the park entrance to the forest cottage."/>
+  <meta property="og:image" content="https://boshuisjes.com/route/poster.jpg"/>
+  <meta property="og:video" content="https://boshuisjes.com/route/boshuisje-route.mp4"/>
+  <meta property="og:type" content="video.other"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{--forest:#1e2d1f;--forest-deep:#141f15;--gold:#c8a96e;--cream:#f5f0e8}
+    body{
+      font-family:'Jost',sans-serif;font-weight:300;color:var(--cream);min-height:100vh;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(58,92,62,.35), transparent 60%),
+        linear-gradient(180deg, var(--forest) 0%, var(--forest-deep) 100%);
+      display:flex;align-items:center;justify-content:center;padding:3rem 1rem;
+    }
+    .wrap{width:100%;max-width:960px;text-align:center}
+    .eyebrow{font-size:.68rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;display:block}
+    h1{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(2.2rem,6vw,3.8rem);line-height:1.05;margin-bottom:.4rem}
+    h1 em{font-style:italic;color:var(--gold)}
+    .sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:rgba(245,240,232,.65);margin-bottom:2.2rem}
+    .frame{position:relative;border:1px solid rgba(200,169,110,.35);padding:6px;background:rgba(0,0,0,.25);box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+    video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+    .note{font-size:.88rem;line-height:1.8;color:rgba(245,240,232,.72);max-width:520px;margin:2rem auto 2.2rem}
+    .note span{display:block;color:rgba(245,240,232,.5);font-size:.82rem}
+    .buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .btn{display:inline-block;padding:.85rem 2rem;font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:all .25s}
+    .btn-gold{background:var(--gold);color:var(--forest)}
+    .btn-gold:hover{background:var(--cream)}
+    .btn-outline{border:1px solid rgba(245,240,232,.35);color:rgba(245,240,232,.8)}
+    .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <span class="eyebrow">Recreatiepark de Wielerbaan · Wageningen</span>
+    <h1>De route naar <em>Boshuisje</em></h1>
+    <p class="sub">The way to the cottage</p>
+    <div class="frame">
+      <video controls playsinline preload="metadata" poster="poster.jpg">
+        <source src="boshuisje-route.mp4" type="video/mp4"/>
+        Uw browser kan deze video niet afspelen. <a href="boshuisje-route.mp4">Download de video</a>.
+      </video>
+    </div>
+    <p class="note">
+      Loop mee van de parkingang, langs de slagboom en door de bomenlanen, tot aan de deur van Boshuisje.
+      <span>Walk with us from the park entrance, past the barrier and along the leafy lanes, to the cottage door.</span>
+    </p>
+    <div class="buttons">
+      <a href="/" class="btn btn-outline">Boshuisjes.com</a>
+      <a href="https://www.booking.com/hotel/nl/boshuisje-wageningen.html" target="_blank" rel="noopener" class="btn btn-gold">Boek / Book</a>
+    </div>
+  </main>
+</body>
+</html>
