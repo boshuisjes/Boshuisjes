@@ -1,0 +1,106 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Boshuisjes Plate Registration</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap">
+<style>
+/* Layout: single phone-first column, green hero, cream cards, sticky language switch */
+:root{--bg:#faf7f2;--card:#fff;--fg:#26302a;--muted:#5d6a60;--green:#1e2d1f;--on-green:#f5f0e8;--gold:#9a7a3a;--gold-soft:#c8a96e;--line:#e6dfd0;--tint:#f5f0e8;
+--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121a13;--card:#1a251b;--fg:#ece6d8;--muted:#a9b3a8;--green:#0c130d;--on-green:#f5f0e8;--gold:#c8a96e;--line:#2c3a2d;--tint:#223024;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121a13;--card:#1a251b;--fg:#ece6d8;--muted:#a9b3a8;--green:#0c130d;--on-green:#f5f0e8;--gold:#c8a96e;--line:#2c3a2d;--tint:#223024;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--sans)}
+*{box-sizing:border-box}
+.wrap{max-width:640px;margin:0 auto;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px))}
+.hero{background:var(--green);color:var(--on-green);padding-block:20px 0}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.brand{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft)}
+.lang{display:flex;border:1px solid var(--gold-soft);border-radius:99px;overflow:hidden}
+.lang button{font:600 13px var(--sans);letter-spacing:.06em;background:none;color:var(--on-green);border:0;padding:6px 14px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--gold-soft);color:#1e2d1f}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--gold-soft);outline-offset:2px}
+h1{font:600 clamp(40px,11vw,60px)/1 var(--serif);margin:28px 0 6px;text-wrap:balance}
+.sub{color:var(--gold-soft);font-size:14px;letter-spacing:.04em;margin:0 0 20px}
+.hero img{display:block;width:100%;height:auto;aspect-ratio:2.5/1;object-fit:cover;border-radius:12px 12px 0 0;margin-top:8px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:8px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+nav a{white-space:nowrap;font-size:14px;font-weight:500;color:var(--fg);text-decoration:none;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:6px 13px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+main{padding-block:8px 48px}
+section{padding-block:26px 6px;scroll-margin-top:64px}
+h2{font:600 30px/1.1 var(--serif);margin:0 0 12px;color:var(--fg);text-wrap:balance}
+h3{font:600 15px var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin:20px 0 6px}
+p{margin:0 0 12px}
+.lead{font:500 21px/1.45 var(--serif)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:0 0 14px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0}
+.kv dt{color:var(--muted);font-size:14px}
+.kv dd{margin:0;font-weight:500;min-width:0;overflow-wrap:anywhere}
+.note{background:var(--tint);border-radius:12px;padding:12px 16px;font-size:15px;margin:0 0 14px}
+.fig{margin:0 0 14px}.fig img{display:block;width:100%;height:auto;border-radius:12px}.fig figcaption{font-size:13px;color:var(--muted);padding-top:6px}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 14px}.doors figure{margin:0;min-width:0}.doors img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px}.doors figcaption{font-size:13px;color:var(--muted);padding-top:4px}
+.pet{border-left:4px solid var(--gold-soft)}.pet dl{margin:0}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}
+.gallery figure{margin:0;min-width:0}
+.gallery img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:10px}
+.gallery figcaption{font-size:13px;color:var(--muted);padding-top:4px}
+ul.plain{margin:0 0 12px;padding-left:20px}ul.plain li{margin-bottom:6px}
+.check{list-style:none;margin:0;padding:0}
+.check li{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--line)}
+.check li:last-child{border-bottom:0}
+.check input{width:20px;height:20px;margin-top:3px;accent-color:#6b8f5e;flex:none}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:0 0 10px}
+summary{cursor:pointer;font-weight:600;padding:13px 16px;list-style-position:inside}
+details p{padding:0 16px;margin:0 0 14px}
+.cta{display:inline-block;background:var(--green);color:var(--on-green);text-decoration:none;font-weight:600;padding:13px 22px;border-radius:99px;margin:4px 0 8px}
+:root[data-theme="dark"] .cta,.cta{border:1px solid var(--gold-soft)}
+footer{border-top:1px solid var(--line);padding-block:22px 40px;color:var(--muted);font-size:14px;text-align:center}
+input,select{width:100%;font:inherit;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:11px 12px}label{display:block;font-weight:500;margin:0 0 4px}.f{margin:0 0 16px}.hint{font-size:13px;color:var(--muted);margin:4px 0 0}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}button.go{font:600 16px var(--sans);background:var(--green);color:var(--on-green);border:1px solid var(--gold-soft);border-radius:99px;padding:13px 26px;cursor:pointer}.hp{position:absolute;left:-9999px}#ok{border-left:4px solid var(--gold-soft)}@media (max-width:420px){.row{grid-template-columns:1fr}}
+@media (max-width:420px){.gallery{grid-template-columns:1fr}.kv{grid-template-columns:1fr;gap:0}.kv dd{margin-bottom:8px}}
+</style>
+</head><body>
+<header class="hero"><div class="wrap">
+ <div class="bar"><span class="brand">Boshuisjes · Wageningen</span>
+ <div class="lang" role="group" aria-label="Language"><button id="b-en" aria-pressed="true">EN</button><button id="b-nl" aria-pressed="false">NL</button></div></div>
+ <h1 data-en="Register your car" data-nl="Meld uw auto aan">Register your car</h1>
+ <p class="sub" data-en="So the park barrier opens for you" data-nl="Zodat de slagboom voor u opengaat">So the park barrier opens for you</p>
+</div></header>
+<main class="wrap" style="padding-top:24px">
+<p data-en="The barrier at Recreatiepark De Wielerbaan opens by number plate. Fill in your details and we register them with the park for you. The park office is open Monday to Saturday, 8:00 to 17:00 and closed on Sunday, so for a Sunday or Monday arrival please send this by Saturday at the latest." data-nl="De slagboom van Recreatiepark De Wielerbaan opent op kenteken. Vul uw gegevens in, dan melden wij die voor u aan bij het park. Het parkkantoor is open van maandag tot en met zaterdag van 8.00 tot 17.00 uur en op zondag gesloten. Komt u op zondag of maandag aan, stuur dit dan uiterlijk zaterdag in.">.</p>
+<form id="f" class="card" autocomplete="off">
+ <input class="hp" type="text" name="botcheck" tabindex="-1" aria-hidden="true">
+ <div class="f"><label for="name" data-en="Name on the booking" data-nl="Naam op de boeking">Name on the booking</label><input id="name" name="name" required></div>
+ <div class="f"><label for="cottage" data-en="Cottage" data-nl="Huisje">Cottage</label><select id="cottage" name="cottage" required><option value="A06 Boshuisje">Boshuisje (A06)</option><option value="A04 Chez-Michel">Chez-Michel (A04)</option></select></div>
+ <div class="row"><div class="f"><label for="arr" data-en="Arrival date" data-nl="Aankomstdatum">Arrival date</label><input id="arr" name="arrival" type="date" required></div>
+ <div class="f"><label for="dep" data-en="Departure date" data-nl="Vertrekdatum">Departure date</label><input id="dep" name="departure" type="date" required></div></div>
+ <div class="row"><div class="f"><label for="p1" data-en="Number plate" data-nl="Kenteken">Number plate</label><input id="p1" name="plate1" required autocapitalize="characters"></div>
+ <div class="f"><label for="c1" data-en="Country" data-nl="Land">Country</label><input id="c1" name="country1" list="cl" required><datalist id="cl"><option value="Nederland"><option value="Deutschland"><option value="België"><option value="France"><option value="United Kingdom"><option value="Polska"><option value="Česko"><option value="Slovensko"></datalist></div></div>
+ <div class="row"><div class="f"><label for="p2" data-en="Second car (optional)" data-nl="Tweede auto (optioneel)">Second car (optional)</label><input id="p2" name="plate2" autocapitalize="characters"></div>
+ <div class="f"><label for="c2" data-en="Country" data-nl="Land">Country</label><input id="c2" name="country2" list="cl"></div></div>
+ <p class="hint" data-en="We use these details only to register your car with the park and delete them after your stay." data-nl="Wij gebruiken deze gegevens alleen om uw auto bij het park aan te melden en verwijderen ze na uw verblijf.">.</p>
+ <button class="go" type="submit" id="go" data-en="Send details" data-nl="Verstuur gegevens">Send details</button>
+</form>
+<div id="ok" class="card" hidden><strong data-en="Thank you." data-nl="Dank u wel.">Thank you.</strong> <span data-en="We have your details and will register them with the park. You will get a confirmation from us." data-nl="Wij hebben uw gegevens ontvangen en melden ze aan bij het park. U krijgt van ons een bevestiging.">.</span></div>
+<div id="err" class="note" hidden data-en="Sending failed. Please send your plate number and country by WhatsApp to +31 6 4944 3739." data-nl="Versturen mislukt. Stuur uw kenteken en land via WhatsApp naar +31 6 4944 3739.">.</div>
+</main>
+<script>
+var KEY="5ea511ef-70b6-447f-acb1-29913c6ad36d";
+var lang="en";
+try{lang=localStorage.getItem("g-lang")||((navigator.language||"").slice(0,2)==="nl"?"nl":"en")}catch(e){}
+function setLang(l){lang=l;try{localStorage.setItem("g-lang",l)}catch(e){}
+ document.documentElement.lang=l;
+ document.querySelectorAll("[data-"+l+"]").forEach(function(el){el.textContent=el.getAttribute("data-"+l)});
+ document.getElementById("b-en").setAttribute("aria-pressed",l==="en");
+ document.getElementById("b-nl").setAttribute("aria-pressed",l==="nl");}
+document.getElementById("b-en").onclick=function(){setLang("en")};
+document.getElementById("b-nl").onclick=function(){setLang("nl")};
+setLang(lang);
+document.getElementById("f").addEventListener("submit",function(e){
+ e.preventDefault();var f=e.target;if(f.botcheck.value)return;
+ var show=function(ok){f.hidden=ok;document.getElementById("ok").hidden=!ok;document.getElementById("err").hidden=ok};
+ if(KEY.indexOf("YOUR_")===0){document.getElementById("demo").hidden=false;show(true);return}
+ var d=new FormData(f);d.append("access_key",KEY);d.append("subject","Plate registration: "+f.name.value+" ("+f.cottage.value+")");d.append("from_name","Boshuisjes guest form");
+ document.getElementById("go").disabled=true;
+ fetch("https://api.web3forms.com/submit",{method:"POST",body:d}).then(function(r){return r.json()}).then(function(j){show(!!j.success)}).catch(function(){show(false)}).then(function(){document.getElementById("go").disabled=false});
+});
+</script>
+</body></html>
